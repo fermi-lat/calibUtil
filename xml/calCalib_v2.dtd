@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2.dtd,v 1.3 2003/03/21 00:00:02 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2.dtd,v 1.4 2003/03/22 01:37:15 jrb Exp $
 
    /**  @file       calCalib.dtd
         @authors    J. Bogart
@@ -125,7 +125,8 @@
 <!ELEMENT calPed  EMPTY>
 <!ATTLIST calPed  %ranges;
                   avg NMTOKEN #REQUIRED
-                  sig NMTOKEN #REQUIRED>
+                  sig NMTOKEN #REQUIRED
+                  cos NMTOKEN "2" >
 
 <!ELEMENT calGain EMPTY>
 <!ATTLIST calGain %ranges;
