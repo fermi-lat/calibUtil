@@ -1,4 +1,4 @@
-// $Header: $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/ClientObject.h,v 1.2 2002/06/27 22:10:52 madhup Exp $
  
 #ifndef CALIBUTIL_CLIENTOBJECT_H
 #define CALIBUTIL_CLIENTOBJECT_H
@@ -11,8 +11,10 @@ namespace calibUtil {
   public: 
     
     /// Performs client specified function on data
-    virtual unsigned int readData(towerRC towerId, unsigned int trayNum, 
-                      uniL uniLayer, std::vector<unsigned int> v) = 0;
+    virtual unsigned int readData(StripSrv::towerRC towerId, 
+                                  unsigned int trayNum, 
+                                  StripSrv::eUnilayer uni, 
+                                  std::vector<unsigned int> v) = 0;
 
   };
 
