@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/badStrips.dtd,v 1.5 2002/05/07 17:18:34 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/genCalib.dtd,v 1.1 2002/12/05 17:36:55 jrb Exp $
 
    /**  @file       genCalib.dtd
         @authors    J. Bogart
@@ -69,6 +69,6 @@
 <!ELEMENT leaf EMPTY>
 <!ATTLIST leaf  dtype (int | unsigned | float) #REQUIRED
                      name  ID                  #REQUIRED
-                     units NMTOKEN             #IMPLIED 
+                     units NMTOKEN             "no_units"
                      value NMTOKENS            #REQUIRED >
 
