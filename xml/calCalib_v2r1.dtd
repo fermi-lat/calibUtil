@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2r1.dtd,v 1.3 2004/06/18 21:29:48 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2r1.dtd,v 1.4 2004/06/18 23:11:42 jrb Exp $
 
    /**  @file       calCalib.dtd
         @authors    J. Bogart
@@ -56,7 +56,7 @@
    calibType (CAL_LightAtt | CAL_LightAsym | CAL_LightYield |
               CAL_Ped | CAL_ElecGain | CAL_IntNonlin | CALDiffNonlin |
               CAL_DiscrLO | CAL_DiscrHI | CAL_MuSlope)    #REQUIRED
-   DTDVersion  NMTOKEN "v2r0"       
+   DTDVersion  NMTOKEN "v2r1"       
    fmtVersion  NMTOKEN #REQUIRED >
 
 <!-- Description of events used as input to the procedure 
