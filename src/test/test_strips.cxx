@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/main.cxx,v 1.3 2002/06/28 18:20:11 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_strips.cxx,v 1.1 2002/07/05 22:52:58 jrb Exp $
 /**  @file test_strips.cxx
    Sample program to exercise low-level calibration strip services.  
 */
@@ -10,30 +10,32 @@
 
 
 int main(int argc, char* argv[]) {
+  using calibUtil::StripSrv;
 
   std::string name(argv[1]);
   
-  calibUtil::StripSrv ssObj(name);
+  StripSrv ssObj(name);
 
-  std::vector<calibUtil::towerRC> tv1 = ssObj.getBadTowers();   
+  std::vector<StripSrv::towerRC> tv1;
+  ssObj.getBadTowers(tv1);   
   cout << "ROW IS" << tv1[0].row;
   cout << "COL IS" << tv1[0].col;
 
-  calibUtil::towerRC trc;
+  StripSrv::towerRC trc;
   trc.row = 3;
   trc.col = 2; 
 
-  cout << "bad is" <<  ssObj.countBad(trc,2,calibUtil::TOP) << endl;
+  cout << "bad is" <<  ssObj.nBad(trc,2,StripSrv::TOP) << endl;
 
-  std::vector<unsigned int> stripList 
-    = ssObj.getBad(trc,0,calibUtil::TOP);
+  std::vector<unsigned int> stripList;
+  ssObj.getBad(trc,0,StripSrv::TOP,stripList);
   cout << "strip number is" << stripList[0];
 
   cout<< "BAD TYPE IS" << ssObj.getBadType() << std::endl;
 
   cout << "instrument name is" << ssObj.getCalType() << endl;
 
-  calibUtil::MyObject cli;
+  MyObject cli;
   ssObj.traverseInfo(&cli);
 
   return(0);
