@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2r2.dtd,v 1.1 2004/09/23 21:16:00 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2r2.dtd,v 1.2 2004/11/15 20:07:00 jrb Exp $
 
    /**  @file       calCalib_v2r2.dtd
         @authors    J. Bogart
@@ -144,7 +144,7 @@
 <!ELEMENT tower (layer*) >
 <!ATTLIST tower iRow NMTOKEN #REQUIRED
                 iCol NMTOKEN #REQUIRED 
-                serialNo NMTOKEN "-1" >
+                hwserial NMTOKEN "-1" >
 
 <!ELEMENT layer (xtal*) >
 <!ATTLIST layer iLayer NMTOKEN #REQUIRED>
