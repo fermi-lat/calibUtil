@@ -1,11 +1,12 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.12 2002/08/30 19:52:34 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.13 2002/09/23 19:12:37 jrb Exp $
 
 
 #include "calibUtil/Metadata.h"
 #include "facilities/Util.h"
 #include "mysql.h"
+#include <iostream>
 #include <strstream>
-#include <cstdio>
+// #include <cstdio>
 
 namespace calibUtil {
 
@@ -402,7 +403,7 @@ namespace calibUtil {
     // Send it off (To be written)
 
     if (serialNo) *serialNo = 0;
-    if ((!(m_rowStatus & s_rowReady)) == s_rowReady) return RETWrongState;
+    if ((m_rowStatus & s_rowReady) != s_rowReady) return RETWrongState;
 
     if (!(m_rowStatus & eCreator)) {
       addCreator("calibUtil::Metadata::insertRecord");

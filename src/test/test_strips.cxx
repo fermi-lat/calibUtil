@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_strips.cxx,v 1.3 2002/07/11 23:23:11 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_strips.cxx,v 1.4 2002/09/23 19:13:39 jrb Exp $
 /**  @file test_strips.cxx
    Sample program to exercise low-level calibration strip services.  
 */
@@ -42,7 +42,7 @@ int main(int, char* argv[]) {
 
   std::cout<< "BAD TYPE IS" << (int) ssObj.getBadType() << std::endl;
 
-  std::cout << "instrument name is" << ssObj.getCalType() << endl;
+  std::cout << "instrument name is" << ssObj.getCalType() << std::endl;
 
   MyObject cli;
   ssObj.traverseInfo(&cli);
