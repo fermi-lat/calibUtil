@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.7 2002/11/18 23:02:59 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/add_meta.cxx,v 1.1 2003/01/13 23:03:25 jrb Exp $
 /** @file test_meta.cxx
     Sample program to add record(s) to the MySQL database. For now user
     only gets to specify
@@ -122,7 +122,7 @@ bool getUserInput(MetaInput* inp) {
   std::cout << std::endl;
 
   std::cout << 
-    "Path to XML file, e.g. $CALIBUTILROOT/xml/test/gen1_1.xml (required): ";
+    "Path to XML file, e.g. $(CALIBUTILROOT)/xml/test/gen1_1.xml (required): ";
   std::cin >> inp->path;
   std::string ascTime;
   std::cout << 
