@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/main.cxx,v 1.3 2002/06/28 18:20:11 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.1 2002/07/05 22:52:58 jrb Exp $
 /** @file test_meta.cxx
     Sample program to exercise calibration metadata database services
 */
@@ -11,14 +11,14 @@ int main(int argc, char* argv[]) {
 
   // Very simplest thing to test first is getReadInfo.
 
-  std::string dataFmt;
-  std::string fmtVersion;
+  std::string  fmtVersion;
+  calibUtil::Metadata::eDataFmt dataFmt;
   std::string dataIdent;
   unsigned    ser = 2;
 
   calibUtil::Metadata  meta;
   calibUtil::Metadata::eRet ret = 
-    meta.getReadInfo(ser, &dataFmt, &fmtVersion, &dataIdent);
+    meta.getReadInfo(ser, dataFmt, fmtVersion, dataIdent);
 
   if (ret == calibUtil::Metadata::RETOk) {
     std::cout << "Success reading info for record #" << ser << std::endl;
