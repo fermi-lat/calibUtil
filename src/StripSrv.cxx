@@ -1,11 +1,11 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.10 2003/02/06 23:28:07 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.11 2003/02/23 19:24:45 jrb Exp $
 /// Module provides methods for clients to get strip services.
 
 #include "xml/XmlParser.h"
 #include "xml/Dom.h"
-#include "dom/DOM_Element.hpp"
-#include "dom/DOM_NodeList.hpp"
-#include "dom/DOM_TreeWalker.hpp"
+#include <xercesc/dom/DOM_Element.hpp>
+#include <xercesc/dom/DOM_NodeList.hpp>
+#include <xercesc/dom/DOM_TreeWalker.hpp>
 
 #include <string>
 #include <iostream>

@@ -1,11 +1,11 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.8 2002/08/02 23:03:50 jrb Exp $ 
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.9 2003/02/06 23:27:29 jrb Exp $ 
 #ifndef CALIBUTIL_STRIPSRV_H
 #define CALIBUTIL_STRIPSRV_H
 
 #include <string>
 #include <iostream>
 #include <vector>
-#include "dom/DOM_Element.hpp"
+#include <xercesc/dom/DOM_Element.hpp>
 
 namespace calibUtil {
 
