@@ -1,5 +1,8 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.17 2002/12/05 17:35:28 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.18 2003/01/16 05:45:45 jrb Exp $
 
+#ifdef  WIN32
+#include <windows.h>
+#endif
 
 #include "calibUtil/Metadata.h"
 #include "facilities/Util.h"

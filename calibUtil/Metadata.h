@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.17 2002/11/22 18:09:50 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.18 2002/12/05 17:35:14 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -6,10 +6,11 @@
 #include "facilities/Timestamp.h"
 //#include <my_global.h>
 //#include <mysql.h>
-
+/*
 #ifdef  WIN32
 #include <windows.h>
 #endif
+*/
 
 typedef struct st_mysql MYSQL;
 
