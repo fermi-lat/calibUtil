@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/test/testHot.xml,v 1.2 2003/02/12 18:18:19 jrb Exp $ -->
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/test/testHot.xml,v 1.3 2003/07/10 21:21:19 jrb Exp $ -->
 
-<!-- Bad strips  XML file according to (new version, as of Jan 2003) 
+<!-- Bad strips  XML file according to (new version, as of Jul 2003) 
      badStrips.dtd -->
 
 <!DOCTYPE badStrips SYSTEM "../badStrips.dtd" [] >
