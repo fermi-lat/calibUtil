@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Timestamp.cxx,v 1.2 2002/06/10 18:59:23 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Timestamp.cxx,v 1.3 2002/07/09 18:24:20 jrb Exp $
 
 #include <ctime>
 #include <cstdlib>
@@ -115,15 +115,15 @@ namespace calibUtil {
     char* bufPtr = &buf[0];
     sprintf(buf, "%i", fields->tm_year + 1900);
     strTime += bufPtr; strTime +=  "-";
-    sprintf(buf, "%i", fields->tm_mon +1);
+    sprintf(buf, "%02i", fields->tm_mon +1);
     strTime += bufPtr; strTime +=  "-";
-    sprintf(buf, "%i", fields->tm_mday);
+    sprintf(buf, "%02i", fields->tm_mday);
     strTime += bufPtr; strTime +=  " ";
-    sprintf(buf, "%i", fields->tm_hour);
+    sprintf(buf, "%02i", fields->tm_hour);
     strTime += bufPtr; strTime +=  ":";
-    sprintf(buf, "%i", fields->tm_min);
+    sprintf(buf, "%02i", fields->tm_min);
     strTime += bufPtr; strTime +=  ":";
-    sprintf(buf, "%i", fields->tm_sec);
+    sprintf(buf, "%02i", fields->tm_sec);
     strTime += bufPtr;
   }
 
