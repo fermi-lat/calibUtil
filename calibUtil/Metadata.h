@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.23 2005/02/25 23:45:49 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.24 2005/03/01 20:05:55 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -174,6 +174,11 @@ namespace calibUtil {
     // these could be static
     rdbModel::Assertion* m_findBest;
     rdbModel::Assertion* m_findSoonest;
+
+    // For each pre-existing row satisfying certain conditions, 
+    // set its vend = vstart of new row
+    unsigned adjustVend(int newSer);
+    
 
     /*
       Set val to string representation of "next" bit in levelMask
