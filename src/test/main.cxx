@@ -1,7 +1,6 @@
-// $Header: $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/main.cxx,v 1.1 2002/06/27 08:47:46 madhup Exp $
 /// Test client program for strip services.  
 
-#include "calibUtil/StripSrv.h"
 #include "calibUtil/MyObject.h"
 
 #include <string>
