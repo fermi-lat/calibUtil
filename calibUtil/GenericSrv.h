@@ -1,11 +1,11 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.6 2002/08/02 23:03:50 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.7 2003/03/17 06:01:52 jrb Exp $
  
 #ifndef CALIBUTIL_GENERICSRV_H
 #define CALIBUTIL_GENERICSRV_H
 
 #include "xml/XmlParser.h"
 #include "xml/Dom.h"
-#include <xercesc/dom/DOM_Element.hpp>
+#include <xercesc/dom/DOMElement.hpp>
 
 #include <string>
 #include <iostream>
@@ -19,7 +19,7 @@ namespace calibUtil {
   public: 
 
     /// Constructor that fills in values of generic data from XML file
-    GenericSrv(const DOM_Element& docElt);
+    GenericSrv(const XERCES_CPP_NAMESPACE_QUALIFIER DOMElement* docElt);
 
     /// Constructor to be used when creating a new calibration data set
     GenericSrv(std::string inst, std::string timestamp, 

@@ -1,11 +1,11 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.10 2003/03/17 06:01:52 jrb Exp $ 
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.11 2003/07/10 21:18:49 jrb Exp $ 
 #ifndef CALIBUTIL_STRIPSRV_H
 #define CALIBUTIL_STRIPSRV_H
 
 #include <string>
 #include <iostream>
 #include <vector>
-#include <xercesc/dom/DOM_Element.hpp>
+#include <xercesc/dom/DOMElement.hpp>
 
 namespace calibUtil {
 
@@ -151,9 +151,11 @@ namespace calibUtil {
     ///  Handles all the messy of details of extracting information
     ///  about a single unilayer from the XML representation
     //    void fillUni(const DOM_Element& uniElt, Unilayer* uni);
-    void fillUni(const DOM_Element& uniElt, Uniplane* uni);
+    void fillUni(const XERCES_CPP_NAMESPACE_QUALIFIER DOMElement* uniElt, 
+                 Uniplane* uni);
 
-    void fillStrips(const DOM_Element& badElt, StripCol& list);
+    void fillStrips(const XERCES_CPP_NAMESPACE_QUALIFIER DOMElement* badElt, 
+                    StripCol& list);
     
     /// Internal utility, used when this object must be mutable (e.g. addBad)
     Tower* findTower(towerRC& towerId);
