@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.5 2002/07/09 23:08:51 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.6 2002/07/11 23:21:08 jrb Exp $
 /// Module provides methods for clients to get strip services.
 
 #include "xml/XmlParser.h"
@@ -33,6 +33,11 @@ namespace calibUtil {
 
     DOM_Element docElt = doc.getDocumentElement();
     m_genSrv = new GenericSrv(docElt);
+
+    unsigned nTower = 
+      (doc.getElementsByTagName(DOMString("tower"))).getLength();
+
+    m_towers.reserve(nTower);
 
     std::string bString = xml::Dom::getAttribute(docElt,"badType");
     if (!bString.compare("hot")) m_badType = HOT;
@@ -99,6 +104,7 @@ namespace calibUtil {
     while(it != m_towers.end() ) {
 
       towerRC trc;
+      towerRCs.reserve(m_towers.size());
       trc.row = it->id.row;
       trc.col = it->id.col;
       // cout << trc.row;
@@ -410,6 +416,8 @@ namespace calibUtil {
       int last = atoi(lastStr.c_str());
       
       if ((first >= 0) && (last >= first)) {
+        // Might as well reserve memory all at once
+        list.reserve(list.size() + last + 1 - first);  
         for (unsigned int i = first; i <= last; i++) {
           list.push_back(i);
         }
