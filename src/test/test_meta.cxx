@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.8 2004/06/21 22:43:14 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.9 2005/02/25 23:48:22 jrb Exp $
 /** @file test_meta.cxx
     Sample program to exercise calibration metadata database services
 */
@@ -30,7 +30,7 @@ int main(int, char**) {
   using facilities::Timestamp;
 
   // just for exercise..
-  compatibility();
+  //  compatibility();
 
   Timestamp t_ok("2001-11-10 08:00");
   Timestamp t_none("2000-09-08 10:00");
@@ -200,17 +200,4 @@ calibUtil::Metadata::eRet soonest(const std::string& ctype,
   }
 
   return ret;
-}
-
-void compatibility() {
-  using calibUtil::Metadata;
-
-  Metadata       meta("*", "*", "calib_test");
-  Metadata::eRet  ret = meta.compareSchema();
-
-  if (ret == Metadata::RETOk) {
-    std::cout << "Schema compatible with MySQL dbs " << std::endl;
-  } else {
-    std::cout << "Schema *NOT* compatible with MySQL dbs " << std::endl;
-  }
 }
