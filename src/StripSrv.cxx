@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.7 2002/07/13 00:32:31 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.8 2002/08/02 23:04:02 jrb Exp $
 /// Module provides methods for clients to get strip services.
 
 #include "xml/XmlParser.h"
@@ -421,14 +421,14 @@ namespace calibUtil {
     DOM_Element spanElt = xml::Dom::findFirstChildByName(badElt, "stripSpan");
     while (spanElt != DOM_Element() ) {
       std::string firstStr = xml::Dom::getAttribute(spanElt, "first");
-      int first = atoi(firstStr.c_str());
+      unsigned short first = (unsigned short) atoi(firstStr.c_str());
       std::string lastStr = xml::Dom::getAttribute(spanElt, "last");
-      int last = atoi(lastStr.c_str());
+      unsigned short last = (unsigned short) atoi(lastStr.c_str());
       
       if ((first >= 0) && (last >= first)) {
         // Might as well reserve memory all at once
         list.reserve(list.size() + last + 1 - first);  
-        for (unsigned int i = first; i <= last; i++) {
+        for (unsigned short int i = first; i <= last; i++) {
           list.push_back(i);
         }
       }
@@ -566,7 +566,7 @@ namespace calibUtil {
 
   }
 
-  StripSrv::eRet StripSrv::writeXml(std::ostream* out) {
+  StripSrv::eRet StripSrv::writeXml(std::ostream* ) {
     return DONE;
   }
 
