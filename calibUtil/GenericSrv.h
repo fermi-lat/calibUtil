@@ -1,10 +1,10 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.7 2003/03/17 06:01:52 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.8 2004/11/10 23:09:08 jrb Exp $
  
 #ifndef CALIBUTIL_GENERICSRV_H
 #define CALIBUTIL_GENERICSRV_H
 
-#include "xml/XmlParser.h"
-#include "xml/Dom.h"
+#include "xmlBase/XmlParser.h"
+#include "xmlBase/Dom.h"
 #include <xercesc/dom/DOMElement.hpp>
 
 #include <string>
