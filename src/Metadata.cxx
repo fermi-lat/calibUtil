@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.20 2003/05/01 18:57:03 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.21 2003/05/01 21:50:48 jrb Exp $
 
 #ifdef  WIN32
 #include <windows.h>
@@ -278,6 +278,7 @@ namespace calibUtil {
         MYSQL_ROW myRow = mysql_fetch_row(myres);
         // serial number is pointed to by myRow[0]
         *ser = atoi(myRow[0]);
+        mysql_free_result(myres);
         return RETOk;
       }
       // otherwise there was no error, but also no rows returned
