@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.9 2002/09/23 19:12:37 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.10 2003/02/06 23:28:07 jrb Exp $
 /// Module provides methods for clients to get strip services.
 
 #include "xml/XmlParser.h"
@@ -260,7 +260,7 @@ namespace calibUtil {
     std::vector<Tower>::iterator it = m_towers.begin();
     while(it != m_towers.end() ) {
       if ((it->m_row == towerId.row) && (it->m_col == towerId.col)) {
-        return (it);
+        return (&(*it));
       }
       ++it;
     }
@@ -271,7 +271,7 @@ namespace calibUtil {
     std::vector<Tower>::const_iterator it = m_towers.begin();
     while(it != m_towers.end() ) {
       if ((it->m_row == towerId.row) && (it->m_col == towerId.col)) {
-        return (it);
+        return (&(*it));
       }
       ++it;
     }
