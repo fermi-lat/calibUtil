@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.4 2002/06/26 00:38:14 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.5 2002/06/28 18:17:17 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -137,9 +137,9 @@ namespace calibUtil {
                       non-null value; else false.
     */
     static bool getReadInfo(unsigned int serialNo, 
-                            const std::string* dataFormat, 
-                            const std::string* fmtVersion,
-                            const std::string* filename);
+                            std::string* dataFormat, 
+                            std::string* fmtVersion,
+                            std::string* filename);
                         
   /** 
     // Additional services will probably be needed to
