@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.15 2002/11/18 23:02:05 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.16 2002/11/22 18:10:06 jrb Exp $
 
 
 #include "calibUtil/Metadata.h"
@@ -300,6 +300,7 @@ namespace calibUtil {
     static std::string calDeadChan("CAL_DeadChan");
     static std::string calDiscrLO("CAL_DiscrLO");
     static std::string calDiscrHI("CAL_DiscrHI");
+    static std::string testGen("Test_Gen");
     switch(cType) {
     case CTYPE_ACDEff:
       return &acdEff;
@@ -350,6 +351,8 @@ namespace calibUtil {
     case CTYPE_CALDiscrHI:
       return &calDiscrHI;
 
+    case CTYPE_TestGen:
+      return &testGen;
 
     default:
       return 0;

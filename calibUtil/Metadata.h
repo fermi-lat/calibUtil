@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.16 2002/11/18 23:00:35 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.17 2002/11/22 18:09:50 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -112,7 +112,8 @@ namespace calibUtil {
       CTYPE_CALHotChan,
       CTYPE_CALDeadChan,
       CTYPE_CALDiscrLO,
-      CTYPE_CALDiscrHI
+      CTYPE_CALDiscrHI,
+      CTYPE_TestGen
     };
       
     /// Constructor keeps track of table of interest
