@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.18 2002/12/05 17:35:14 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.19 2003/01/16 22:15:45 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -310,7 +310,8 @@ namespace calibUtil {
 
     bool addLevel(std::string& q, unsigned int *levelMask);
 
-    static bool connect(MYSQL * cxt, const std::string& user, 
+    static bool connect(MYSQL * cxt, std::string& host, 
+                        const std::string& user, 
                         const std::string& pw, eRet& err);
 
     bool connectRead(eRet& err);
