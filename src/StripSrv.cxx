@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.2 2002/06/27 08:48:34 madhup Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/StripSrv.cxx,v 1.3 2002/06/27 22:05:16 madhup Exp $
 /// Module provides methods for clients to get strip services.
 
 #include "xml/XmlParser.h"
@@ -19,7 +19,7 @@
 namespace calibUtil {
   
   /// convert stripList in string format to a vector of strip numbers
-  StripSrv::strToNum(std::string s,std::vector<unsigned int> &v){
+  void StripSrv::strToNum(std::string s,std::vector<unsigned int> &v){
 
     std::string::iterator it = s.begin();
     
