@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.3 2002/06/11 01:13:05 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.4 2002/06/26 00:38:14 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -22,7 +22,8 @@ namespace calibUtil {
       RETBadHost = 2,
       RETNoConnect = 3,
       RETWrongState = 4,
-      RETMySQLError = 5
+      RETBadValue = 5,
+      RETMySQLError = 6
     };
     /// Used to form bit masks for dbs queries
     enum eLevel {
@@ -171,6 +172,8 @@ namespace calibUtil {
 
     //    static void makeQuery(std::string& query, unsigned int *levelMask);
     static bool addLevel(std::string& q, unsigned int *levelMask);
+    static bool checkCalibStatusInput(const std::string& stat);
+    static bool checkProcLevelInput(const std::string& level);
 
     /** Keep track of which columns in row have been initialized 
         with bit mask */
