@@ -1,4 +1,4 @@
-// $Header: $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.1 2002/06/22 00:46:50 madhup Exp $
  
 #ifndef CALIBUTIL_GENERICSRV_H
 #define CALIBUTIL_GENERICSRV_H
@@ -18,20 +18,8 @@ namespace calibUtil {
   public: 
 
     /// Constructor that fills in values of generic data from XML file
-    GenericSrv(std::string xmlFileName){
-  
-      xml::XmlParser* parser = new xml::XmlParser();
-      DOM_Document doc = parser->parse(xmlFileName.c_str());
-      
-      if (doc != 0) {  
-        std::cout << "Document successfully parsed" << std::endl;
-      }
-      else {     
-        std::cout << "Error parsing document" << std::endl;
-        exit(1);    
-      }
-      
-      DOM_Element docElt = doc.getDocumentElement();
+    GenericSrv(DOM_Element docElt){
+
       DOM_Element child  = xml::Dom::findFirstChildByName(docElt,"generic");
       instName  = xml::Dom::getAttribute(child,"instrument");
       timestamp = xml::Dom::getAttribute(child,"timestamp");
