@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/Cal/SampleAsym.xml,v 1.1 2004/09/24 22:43:27 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/Cal/SampleTholdMuon.xml,v 1.1 2004/10/06 23:59:32 jrb Exp $
 
    /**  @file       SampleTholdMuon.xml
         @authors    J. Bogart
@@ -132,7 +132,8 @@
 
 <!ELEMENT tower (layer*) >
 <!ATTLIST tower iRow NMTOKEN #REQUIRED
-                iCol NMTOKEN #REQUIRED >
+                iCol NMTOKEN #REQUIRED 
+                serialNo NMTOKEN "-1" >
 
 <!ELEMENT layer (xtal*) >
 <!ATTLIST layer iLayer NMTOKEN #REQUIRED>
