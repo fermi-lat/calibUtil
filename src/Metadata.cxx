@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.23 2004/04/15 00:44:12 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.24 2004/06/21 22:42:42 jrb Exp $
 
 #ifdef  WIN32
 #include <windows.h>
@@ -540,9 +540,26 @@ namespace calibUtil {
       }
       else dataFmt = FMTUnknown;
 
+      if (myRow[1] == 0) {
+        fmtVersion = std::string("");
+      }
+      else if (*myRow[1] == 0) {
+        fmtVersion = std::string("");
+      }
+      else {
+        fmtVersion = std::string(myRow[1]);
+      }
 
-      fmtVersion = std::string(myRow[1]);
-      filename = std::string(myRow[2]);
+      if (myRow[2] == 0) {
+        filename = std::string("");
+      }
+      else if (*myRow[2] == 0) {
+        filename = std::string("");
+      }
+      else {
+        filename = std::string(myRow[2]);
+      }
+
       return RETOk;
     }
     else return RETBadValue;
