@@ -1,4 +1,4 @@
-# $Header: $
+# $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/maint/createmeta_v1.sql,v 1.1 2002/07/02 20:20:42 jrb Exp $
 # File for creating metadata table for calibration
 # This (or any other) script may be run from within mysql 
 #     mysql>  source createmeta.sql
@@ -29,6 +29,7 @@ use calib;
 #       creator          What program created the data?
 #       uid              What person created/entered the data?
 #       data_ident       Filename or other identifier for persistent data
+# $Header: $
 #       input_desc       Comments about input to this calibration procedure
 #       notes            A spot for miscellaneous comments
 create table metadata_v1
