@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/badStrips.dtd,v 1.8 2003/07/11 19:32:30 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/badStrips.dtd,v 1.9 2003/12/02 23:38:14 jrb Exp $
 
    /**  @file       badStrips.dtd
         @authors    J. Bogart
@@ -39,6 +39,7 @@
    instrument  (LAT | BFEM | BTEM | EM | CU) #REQUIRED
    timestamp   NMTOKEN #REQUIRED
    calType     NMTOKEN #REQUIRED
+   creator     NMTOKEN #IMPLIED
    DTDVersion  NMTOKEN "v3r1"       
    fmtVersion  NMTOKEN #REQUIRED >
 
@@ -90,6 +91,7 @@
 <!ELEMENT tower (uniplane*) >
 <!ATTLIST tower row NMTOKEN #REQUIRED 
                 col NMTOKEN #REQUIRED 
+                hwserial NMTOKEN "-1"
                 nOnbdCalib  (true | false) "false"
                 nOnbdTrig    (true | false) "false"
                 nOnbdData    (true | false) "false"  >
