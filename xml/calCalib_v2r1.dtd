@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2.dtd,v 1.5 2004/02/17 17:54:03 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/calCalib_v2r1.dtd,v 1.1 2004/05/20 23:32:30 jrb Exp $
 
    /**  @file       calCalib.dtd
         @authors    J. Bogart
@@ -51,7 +51,7 @@
  -->
 <!ELEMENT  generic  (inputSample?) >
 <!ATTLIST generic  
-   instrument  (LAT | BFEM | BTEM | EM | CU) #REQUIRED
+   instrument  (LAT | BFEM | BTEM | EM | EM2 | CU) #REQUIRED
    timestamp   NMTOKEN #REQUIRED
    calibType (CAL_LightAtt | CAL_LightAsym | CAL_LightYield |
               CAL_Ped | CAL_ElecGain | CAL_IntNonlin | CALDiffNonlin |
@@ -90,6 +90,10 @@
         number of faces      (mostly 2; 1 for light asymmetry data)
         number of ranges     (fixed at 4? for now just default to 4) 
         number of sets of dac settings (mostly 0)
+        exact    may be "true" or "false".  If "true", above information
+                 may be mutliplied to compute total number of innermost
+                 elements (e.g., calPed)
+
    Use the following conventions to determine which data element 
    corresponds to a particular physical crystal, optional face and
    gain range:
@@ -106,7 +110,8 @@
            (tower=0,layer=0, xtal=0, face=0, range=0)
            (tower=0,layer=0, xtal=0, face=0, range=1)
  
-         The total number of data elements is just
+         The total number of data elements (for the default
+         case, with exact = "true") is just
                 nRow*nCol*nLayer*nXtal*nFace*nRange
 
  -->
@@ -117,7 +122,8 @@
                     nXtal  NMTOKEN #REQUIRED
                     nFace  NMTOKEN #REQUIRED
                     nRange NMTOKEN "4"      
-                    nDacCol NMTOKEN "0" >
+                    nDacCol NMTOKEN "0" 
+                    exact  (true | false) "true" >
 
 <!-- For those calibrations involving setting a dac, keep track of
     settings.  Expect one set per range where used; else 0. Number 
