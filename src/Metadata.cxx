@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.16 2002/11/22 18:10:06 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.17 2002/12/05 17:35:28 jrb Exp $
 
 
 #include "calibUtil/Metadata.h"
@@ -475,7 +475,7 @@ namespace calibUtil {
     if (mysql_num_rows(myres) ) {  // must have been a good serial number
       MYSQL_ROW myRow = mysql_fetch_row(myres);
       std::string vstart(myRow[0]);
-      std::string vend(myRow[0]);
+      std::string vend(myRow[1]);
 
       since = new facilities::Timestamp(vstart);
       till = new facilities::Timestamp(vend);
