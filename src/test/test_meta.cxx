@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.5 2002/08/30 19:52:52 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.6 2002/09/23 19:13:39 jrb Exp $
 /** @file test_meta.cxx
     Sample program to exercise calibration metadata database services
 */
@@ -23,20 +23,21 @@ int main(int, char**) {
   Timestamp t_ok("2001-11-10 08:00");
   Timestamp t_none("2000-09-08 10:00");
 
-  Metadata::eRet ret = lookup(Metadata::CTYPE_TKRBadChan, t_ok, 
-                              Metadata::LEVELDev, Metadata::INSTBtem);
+  Metadata::eRet ret = lookup(Metadata::CTYPE_TKRDeadChan, t_ok, 
+                              Metadata::LEVELDev | Metadata::LEVELTest, 
+                              Metadata::INSTBtem);
 
-  ret = lookup(Metadata::CTYPE_TKRBadChan, t_ok, 
+  ret = lookup(Metadata::CTYPE_TKRDeadChan, t_ok, 
                Metadata::LEVELProd | Metadata::LEVELDev, Metadata::INSTBtem);
 
   ret = lookup(Metadata::CTYPE_ACDEff, t_ok, 
                Metadata::LEVELProd | Metadata::LEVELDev, 
                Metadata::INSTBtem);
-  ret = lookup(Metadata::CTYPE_TKRBadChan, t_none, Metadata::LEVELDev,
+  ret = lookup(Metadata::CTYPE_TKRHotChan, t_none, Metadata::LEVELDev,
                Metadata::INSTBtem);
 
   // Try to insert a record
-  ret = meta.openRecord(Metadata::INSTEm, Metadata::CTYPE_TKRBadChan,
+  ret = meta.openRecord(Metadata::INSTEm, Metadata::CTYPE_TKRHotChan,
                    Metadata::FMTXml, "1.0",
                    "$CALIBUTILROOT/xml/test/testHot-2002-05-02.xml",
                    Metadata::CMPLOk);
