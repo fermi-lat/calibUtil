@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.4 2002/07/11 23:17:55 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.5 2002/07/13 00:30:57 jrb Exp $
  
 #ifndef CALIBUTIL_GENERICSRV_H
 #define CALIBUTIL_GENERICSRV_H
@@ -20,6 +20,12 @@ namespace calibUtil {
 
     /// Constructor that fills in values of generic data from XML file
     GenericSrv(const DOM_Element& docElt);
+
+    /// Constructor to be used when creating a new calibration data set
+    GenericSrv(std::string inst, std::string timestamp, 
+               std::string calType, InputSample* samp) :
+      m_instName(inst), m_timestamp(timestamp), m_calType(calType),
+      m_fmtVer(0), m_sample(samp) {}
 
     /// Get instrument name
     std::string getInst(){
