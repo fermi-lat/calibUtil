@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/test/testHot-2002_05_02.xml,v 1.1 2002/05/02 20:56:22 jrb Exp $ -->
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/test/testHot-2002_05_02.xml,v 1.2 2002/05/07 17:19:08 jrb Exp $ -->
 
 <!-- First attempt at bad strips  XML file according to badStrips.dtd -->
 
@@ -31,7 +31,7 @@
           <stripSpan first="3" last="9" />
         </veryBad>
       </unilayer>
-    </tray>
+    </tray> 
     <tray trayNum="7">
       <unilayer which="bot">
         <bad>
