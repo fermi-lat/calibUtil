@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.9 2002/07/06 00:32:36 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.10 2002/07/09 18:23:54 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -200,8 +200,10 @@ namespace calibUtil {
                         
     /** Write a record to the metadata database. Any required columns
      *  not specified by caller will be set to default values.
+     @param serialNo   serial number of new record if insert succeeds [output]
+     @return           See eRet enumerated type for possible values
      */
-    eRet insertRecord();
+    eRet insertRecord(unsigned int* serialNo = 0);
 
     /** Start a new metadata record by supplying all absolutely
         required information as arguments:
