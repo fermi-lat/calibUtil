@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.9 2003/02/06 23:27:29 jrb Exp $ 
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.10 2003/03/17 06:01:52 jrb Exp $ 
 #ifndef CALIBUTIL_STRIPSRV_H
 #define CALIBUTIL_STRIPSRV_H
 
@@ -31,8 +31,9 @@ namespace calibUtil {
     /**  Handle bad tower
         @param row         zero-based row of tower
         @param col         zero-based column of tower
-        @param badness     if gradations of badness have been recorded,
-                           larger number here corresponds to worse failure
+        @param badness     bit mask including 3 least sig. bits
+        These bits are defined in ChannelStatusDef.h
+
     */
     virtual eVisitorRet badTower(unsigned int row, unsigned int col, 
                                  int badness)=0;
@@ -40,8 +41,8 @@ namespace calibUtil {
     /**  Handle bad uniplane with some or all bad strips
         @param row         zero-based row of tower
         @param col         zero-based column of tower
-        @param badness     if gradations of badness have been recorded,
-                           larger number here corresponds to worse failure
+        @param badness     bit mask including 3 least sig. bits:
+        These bits are defined in ChannelStatusDef.h (same as for tower)
         @param allBad      if true all strips are bad. @arg strips should
                            be ignored
         @param strips      vector of strips of badness @arg badness.  If
