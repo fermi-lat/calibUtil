@@ -1,4 +1,4 @@
-# $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/maint/createmeta_v2.sql,v 1.1 2002/09/23 19:13:22 jrb Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/maint/createmeta_v2r1.sql,v 1.1 2002/11/18 23:02:43 jrb Exp $
 # File for creating metadata table for calibration
 # This (or any other) script may be run from within mysql 
 #     mysql>  source createmeta.sql
@@ -25,13 +25,13 @@ use calib;
 #   fmt_version      Versioning field placeholder so that code has option
 #                    of, e.g., reading in old data.
 #   proc_level       How seriously are we to take this data?
+#   prod_start       Time the calibration achieved proc_level = 'PROD'
+#   prod_end         Time the calib. ceased being called 'PROD', e.g.
 #   completion       Did it?     
-#   read_status      In case we want to, e.g., lock out readers while a 
-#                    row is being created or updated.
 #   creator          What program created the data?
 #   uid              What person created/entered the data?
 #   data_ident       Filename or other identifier for persistent data
-# $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/maint/createmeta_v2.sql,v 1.1 2002/09/23 19:13:22 jrb Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/maint/createmeta_v2r1.sql,v 1.1 2002/11/18 23:02:43 jrb Exp $
 #       input_desc       Comments about input to this calibration procedure
 #       notes            A spot for miscellaneous comments
 create table metadata_v2r1
@@ -48,6 +48,8 @@ create table metadata_v2r1
    fmt_version varchar(12),
    completion ENUM('OK','INC', 'ABORT'),
    proc_level ENUM('PROD', 'TEST', 'DEV', 'SUPSED') not null default 'TEST',
+   prod_start  datetime,
+   prod_end    datetime,
    creator     varchar(255),
    uid         varchar(12) not null,
    data_ident     varchar(255) not null,  
@@ -56,5 +58,8 @@ create table metadata_v2r1
    index typical_search (completion, instrument, calib_type, flavor, proc_level)  )
   comment = "calibration metadata table version v2r1";
 
+#    Following won't be implemented until and unless it's necessary
+#   read_status      In case we want to, e.g., lock out readers while a 
+#                    row is being created or updated.
 ###   Probably don't need a 'busy bit' per row
 ###    read_status ENUM('BUSY', 'OK', 'BAD') not null default 'BUSY', 
