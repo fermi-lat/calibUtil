@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.1 2002/06/22 00:46:50 madhup Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/GenericSrv.h,v 1.2 2002/06/27 08:50:50 madhup Exp $
  
 #ifndef CALIBUTIL_GENERICSRV_H
 #define CALIBUTIL_GENERICSRV_H
@@ -18,15 +18,7 @@ namespace calibUtil {
   public: 
 
     /// Constructor that fills in values of generic data from XML file
-    GenericSrv(DOM_Element docElt){
-
-      DOM_Element child  = xml::Dom::findFirstChildByName(docElt,"generic");
-      instName  = xml::Dom::getAttribute(child,"instrument");
-      timestamp = xml::Dom::getAttribute(child,"timestamp");
-      calType   = xml::Dom::getAttribute(child,"calType");
-      fmtVer    = xml::Dom::getAttribute(child,"fmtVersion");
-
-    }
+    GenericSrv(DOM_Element docElt);
 
     /// Get instrument name
     std::string getInst(){
@@ -57,7 +49,7 @@ namespace calibUtil {
 
   };
 
-}/// end of namespace calibUtil
+}// end of namespace calibUtil
 
 #endif
 
