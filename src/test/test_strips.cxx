@@ -1,6 +1,7 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/main.cxx,v 1.2 2002/06/27 22:08:30 madhup Exp $
-/// Test client program for strip services.  
-
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/main.cxx,v 1.3 2002/06/28 18:20:11 jrb Exp $
+/**  @file test_strips.cxx
+   Sample program to exercise low-level calibration strip services.  
+*/
 #include "MyObject.h"
 
 #include <string>
