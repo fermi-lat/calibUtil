@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.14 2002/09/24 18:04:08 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.15 2002/11/18 23:02:05 jrb Exp $
 
 
 #include "calibUtil/Metadata.h"
@@ -6,7 +6,7 @@
 #include "mysql.h"
 #include <iostream>
 #include <strstream>
-// #include <cstdio>
+#include <cstdio>
 
 namespace calibUtil {
 
@@ -442,6 +442,46 @@ namespace calibUtil {
     }
     else return RETBadValue;
   }
+
+  Metadata::eRet Metadata::getInterval(unsigned int serialNo, 
+                                       facilities::Timestamp*& since,
+                                       facilities::Timestamp*& till) {
+    eRet ret;
+    if (!m_readCxt) {
+      connectRead(ret);
+      if (ret != RETOk) return ret;
+    }
+    std::string q("select vstart, vend from ");
+    q += m_table;
+    q += " where ser_no=";
+
+    char serBuf[20];
+    sprintf(serBuf, "%i", serialNo);
+
+    q += serBuf;
+
+    int myRet = mysql_query(m_readCxt, q.c_str());
+    if (myRet) {
+      std::cerr << "MySQL error during SELECT, code " << (int) ret 
+                << std::endl;
+      return RETMySQLError;
+    }
+      
+    MYSQL_RES *myres = mysql_store_result(m_readCxt);
+    
+    if (mysql_num_rows(myres) ) {  // must have been a good serial number
+      MYSQL_ROW myRow = mysql_fetch_row(myres);
+      std::string vstart(myRow[0]);
+      std::string vend(myRow[0]);
+
+      since = new facilities::Timestamp(vstart);
+      till = new facilities::Timestamp(vend);
+      return RETOk;
+    }
+    else return RETBadValue;
+  }
+                                       
+
 
   /*
     openRecord, insertRecord, and various add.. methods are used to

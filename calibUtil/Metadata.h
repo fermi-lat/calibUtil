@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.15 2002/09/24 18:04:08 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.16 2002/11/18 23:00:35 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -213,6 +213,10 @@ namespace calibUtil {
     const std::string* const getDataFmtStr(eDataFmt fmt);
     const std::string* const getInstrumentStr(eInstrument inst);
 
+    /// Get validity interval for a particular calibration
+    eRet getInterval(unsigned int serialNo,
+                     facilities::Timestamp*& since,
+                     facilities::Timestamp*& till);
 
     // Might also want a "findAll" which would just return a list
     // of serial numbers, and a "getRecord" which would either
