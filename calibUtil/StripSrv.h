@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.3 2002/06/27 08:49:49 madhup Exp $ 
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/StripSrv.h,v 1.4 2002/06/27 22:10:00 madhup Exp $ 
 #ifndef CALIBUTIL_STRIPSRV_H
 #define CALIBUTIL_STRIPSRV_H
 
@@ -20,7 +20,7 @@ namespace calibUtil {
 
     /// this function takes in a stripList in string format and 
     /// fills a vector with corresponding strip numbers
-    strToNum(std::string strips, std::vector<unsigned int> &v);
+    void strToNum(std::string strips, std::vector<unsigned int> &v);
 
   public:
 
