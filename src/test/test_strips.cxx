@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_strips.cxx,v 1.5 2002/09/24 18:04:08 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_strips.cxx,v 1.6 2003/02/06 23:29:27 jrb Exp $
 /**  @file test_strips.cxx
    Sample program to exercise low-level calibration strip services. 
    Optional argument is path to file using badStrips.dtd.  If omitted,
@@ -28,10 +28,11 @@ int main(int argc, char* argv[]) {
 
   std::string name = "$(CALIBUTILROOT)/xml/test/testHot.xml";
   
-  facilities::Util::expandEnvVar(&name);
   if (argc > 1) {
     name = std::string((argv[1]));
   }
+  facilities::Util::expandEnvVar(&name);
+
   StripSrv ssObj(name);
 
   std::vector<StripSrv::towerRC> trc;
