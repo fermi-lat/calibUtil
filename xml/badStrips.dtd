@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/badStrips.dtd,v 1.11 2005/01/26 00:51:20 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/badStrips.dtd,v 1.12 2005/03/04 23:14:01 jrb Exp $
 
    /**  @file       badStrips.dtd
         @authors    J. Bogart
@@ -31,19 +31,20 @@
                             it in the MySQL metadata table]
  -->
 
-<!ELEMENT badStrips (generic, cuts?, tower*) >
+<!ELEMENT badStrips (generic?, cuts?, tower*) >
 <!ATTLIST badStrips badType (hot | dead) #REQUIRED >
 
 <!ELEMENT  generic  (inputSample) >
-<!ATTLIST generic  
+<!ATTLIST generic
    instrument  NMTOKEN #REQUIRED
-   timestamp   NMTOKEN #REQUIRED
-   calType     NMTOKEN #REQUIRED
-   creator     NMTOKEN #IMPLIED
-   DTDVersion  NMTOKEN "v3r1"       
-   fmtVersion  NMTOKEN #REQUIRED >
-
-<!--    instrument  (LAT | BFEM | BTEM | EM | CU | TWR) #REQUIRED  -->
+   timestamp   NMTOKEN #IMPLIED
+   runId       NMTOKEN #IMPLIED
+   calType     NMTOKEN #IMPLIED
+   DTDVersion  NMTOKEN "v3r2"
+   fmtVersion  NMTOKEN #IMPLIED
+   creatorName NMTOKEN #IMPLIED
+   creatorVersion NMTOKEN #IMPLIED
+ >
 
 <!-- Description of events used as input to the procedure 
      Start- and stop-times should be timestamps of earliest and
