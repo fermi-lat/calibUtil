@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.27 2005/03/01 20:07:13 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.28 2005/03/03 00:14:13 jrb Exp $
 
 /*
 #ifdef  WIN32
@@ -584,6 +584,8 @@ Metadata::eRet Metadata::getInterval(unsigned int serialNo,
 
     m_man->setBuilder(new rdbModel::XercesBuilder);
     m_man->setInputSource(schema);
+
+    // Maybe first check if file exists?  E.g., try opening for read
 
     // good errcode is 0
     int errcode = m_man->build();

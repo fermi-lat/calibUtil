@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.24 2005/03/01 20:05:55 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/calibUtil/Metadata.h,v 1.25 2005/03/03 00:13:59 jrb Exp $
 #ifndef CALIBUTIL_METADATA_H
 #define CALIBUTIL_METADATA_H
 
@@ -162,6 +162,20 @@ namespace calibUtil {
                       const std::string& input_start = "",
                       const std::string& input_end = "");
 
+    bool connectRead(eRet& err);
+
+
+    bool checkValues(const rdbModel::StringVector& cols,
+                     const rdbModel::StringVector& vals) const;
+
+    bool checkNulls(const rdbModel::StringVector& cols) const;
+
+    rdbModel::Connection* getReadConnection() {return m_readCxt;}
+    
+    // Should probably be const
+    rdbModel::Rdb* getRdb() {return m_rdb;}
+    const std::string& getTable() {return m_table;}
+
     // Might make these private
     void disconnectRead();
     void disconnectWrite();
@@ -200,17 +214,11 @@ namespace calibUtil {
                         const std::string& pw,  eRet& err,
                         const std::string& dbName);
 
-    bool connectRead(eRet& err);
     bool connectWrite(eRet& err);
+
 
     eRet compareSchema(rdbModel::Connection* conn,
                        const std::string& schema);
-
-    bool checkValues(const rdbModel::StringVector& cols,
-                     const rdbModel::StringVector& vals) const;
-
-    bool checkNulls(const rdbModel::StringVector& cols) const;
-
     // Find 'best' calibration, based on conditions and levelMask; store
     // serial number.
     eRet Metadata::doSelect(unsigned levelMask, 
