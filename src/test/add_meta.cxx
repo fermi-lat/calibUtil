@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/add_meta.cxx,v 1.3 2005/02/25 23:48:22 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/add_meta.cxx,v 1.4 2005/03/03 00:14:32 jrb Exp $
 /** @file test_meta.cxx
     Sample program to add record(s) to the MySQL database. For now user
     only gets to specify
@@ -24,21 +24,9 @@ int main(int, char**) {
   Metadata  meta("*", "*", "calib_test");
 
   int ser = 
-    meta.registerCalib("piano","mocha chip", "Test_Gen", "notAFile.xml",
+    meta.registerCalib("kazoo","mango", "Test_Gen", "notAFile.xml",
                        "XML", facilities::Timestamp("1990-1-5"),
-                       facilities::Timestamp("1995-6-11"), "", 
-                       "From add_meta test program in calibUtil package",
-                       "TEST", "SLAC", "", "INC", "", "");
-  if (ser) {
-    std::cout << "Successfully added metadata record; returned serial no. is " 
-              << ser << std::endl;
-  }
-  else std::cout << "Failed to register new metadata record" << std::endl;
-
-  ser = 
-    meta.registerCalib("cello","rocky road", "Test_Gen", "notAFile.xml",
-                       "XML", facilities::Timestamp("1990-1-5"),
-                       facilities::Timestamp("1995-6-11"), "", 
+                       facilities::Timestamp("2037-1-1"), "", 
                        "From add_meta test program in calibUtil package",
                        "TEST", "SLAC", "", "OK", "", "");
   if (ser) {
@@ -47,7 +35,20 @@ int main(int, char**) {
   }
   else std::cout << "Failed to register new metadata record" << std::endl;
 
+  ser = 
+    meta.registerCalib("kazoo","mango", "Test_Gen", "alsoNotAFile.xml",
+                       "XML", facilities::Timestamp("1990-2-5"),
+                       facilities::Timestamp("2037-1-1"), "", 
+                       "From add_meta test program in calibUtil package,
+                        overlaps previous",
+                       "TEST", "SLAC", "", "OK", "", "");
+  if (ser) {
+    std::cout << "Successfully added metadata record; returned serial no. is " 
+              << ser << std::endl;
+  }
+  else std::cout << "Failed to register new metadata record" << std::endl;
 
+  /*
   ser = 
     meta.registerCalib("cello","rocky road", "Test_Gen", "notAnotherFile.root",
                        "ROOT", facilities::Timestamp("1993-1-5"),
@@ -72,7 +73,7 @@ int main(int, char**) {
               << ser << std::endl;
   }
   else std::cout << "Failed to register new metadata record" << std::endl;
-
+  */
 
 }
 
