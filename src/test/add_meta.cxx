@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/add_meta.cxx,v 1.4 2005/03/03 00:14:32 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/add_meta.cxx,v 1.5 2005/05/16 20:10:36 jrb Exp $
 /** @file test_meta.cxx
     Sample program to add record(s) to the MySQL database. For now user
     only gets to specify
@@ -39,8 +39,7 @@ int main(int, char**) {
     meta.registerCalib("kazoo","mango", "Test_Gen", "alsoNotAFile.xml",
                        "XML", facilities::Timestamp("1990-2-5"),
                        facilities::Timestamp("2037-1-1"), "", 
-                       "From add_meta test program in calibUtil package,
-                        overlaps previous",
+       "From add_meta test program in calibUtil package, overlaps previous",
                        "TEST", "SLAC", "", "OK", "", "");
   if (ser) {
     std::cout << "Successfully added metadata record; returned serial no. is " 
