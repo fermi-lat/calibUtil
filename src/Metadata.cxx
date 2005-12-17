@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.30 2005/05/16 20:10:36 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.31 2005/06/19 20:42:37 jrb Exp $
 
 /*
 #ifdef  WIN32
@@ -190,7 +190,7 @@ namespace calibUtil {
                                  //false, true);
     Assertion::Operator startOp(OPTYPElessOrEqual, update_start->getString(),
                                 "update_time", 
-                                FIELDTYPEold, FIELDTYPElit);
+                                FIELDTYPElit, FIELDTYPEold);
                                 // true, false);
     
     conditions.push_back(&completeOp);
