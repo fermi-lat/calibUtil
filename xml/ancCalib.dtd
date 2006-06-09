@@ -1,5 +1,5 @@
 <!--
-   $Header: $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/ancCalib.dtd,v 1.1 2006/06/07 22:45:03 jrb Exp $
 
    /**  @file       ancillaryCalib.dtd
         @authors    J. Bogart
@@ -80,11 +80,11 @@
 <!ATTLIST ancPed  ped NMTOKEN #REQUIRED
                   rNoise NMTOKEN #REQUIRED
                   sNoise NMTOKEN #REQUIRED
-                  isBad  (0 | 1) "0" > 
+                  isBad  NMTOKEN "0" > 
 
 <!ELEMENT ancGain EMPTY>
 <!ATTLIST ancGain gain NMTOKEN #REQUIRED
-                  isBad   (0 | 1) "0" > 
+                  isBad  NMTOKEN "0" > 
 
 
 
