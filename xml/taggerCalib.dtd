@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/ancCalib.dtd,v 1.2 2006/06/09 17:46:09 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/taggerCalib.dtd,v 1.1 2006/06/22 01:27:55 jrb Exp $
 
    /**  @file       taggerCalib.dtd
         @authors    J. Bogart
@@ -7,7 +7,6 @@
         dtd for tagger calibration data types
     */
  -->
-
 <!-- 
    Overall structure is some header information followed by
    a sequence of module data.  Module data is made up
@@ -78,6 +77,3 @@
 <!ELEMENT taggerGain EMPTY>
 <!ATTLIST taggerGain gain NMTOKEN #REQUIRED
                      isBad  NMTOKEN "0" > 
-
-
-
