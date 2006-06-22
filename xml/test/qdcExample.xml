@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE qdcCalib [
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/qdcCalib.dtd,v 1.1 2006/06/22 01:27:55 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/test/qdcExample.xml,v 1.1 2006/06/22 06:16:29 jrb Exp $
 
    /**  @file       qdcCalib.dtd
         @authors    J. Bogart
@@ -74,7 +74,7 @@
 <!ELEMENT qdcChan (qdcPed) >
 <!ATTLIST qdcChan  iMod NMTOKEN #REQUIRED
                    iChan NMTOKEN #REQUIRED 
-                   device CDATA #REQUIRED
+                   device CDATA " "
 >
 
 <!ELEMENT qdcPed  EMPTY>
@@ -103,6 +103,11 @@
 
    <qdcChan iMod="1"  iChan="0" device="trd_0">
     <qdcPed ped="19.1" pedRms="0.2" isBad="0" />
+   </qdcChan>
+
+   <!-- don't have to specify device -->
+   <qdcChan iMod="1" iChan="1">
+     <qdcPed ped="16.3" pedRms="2.1" isBad="0" />
    </qdcChan>
 
 <!-- A real calibration file would have more channels for module 1 here -->
