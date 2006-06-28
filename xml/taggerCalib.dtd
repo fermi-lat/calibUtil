@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/taggerCalib.dtd,v 1.1 2006/06/22 01:27:55 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/taggerCalib.dtd,v 1.2 2006/06/22 06:15:45 jrb Exp $
 
    /**  @file       taggerCalib.dtd
         @authors    J. Bogart
@@ -37,7 +37,7 @@
                             be implemented as enumeration rather than
                             NMTOKEN
             timestamp     - when the file was written (date and time)
-            calibType     - one of "TAG_Ped" or TAG_Gain
+            calibType     - one of "ANC_TaggerPed" or ANC_TaggerGain
             fmtVersion    - sufficient versioning information so that
                             software attempting to read the file can
                             determine if it supports this version. 

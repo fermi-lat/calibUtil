@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/qdcCalib.dtd,v 1.2 2006/06/22 06:15:45 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/qdcCalib.dtd,v 1.3 2006/06/22 06:35:40 jrb Exp $
 
    /**  @file       qdcCalib.dtd
         @authors    J. Bogart
@@ -40,7 +40,7 @@
                             be implemented as enumeration rather than
                             NMTOKEN
             timestamp     - when the file was written (date and time)
-            calibType     - QDC_ped
+            calibType     - ANC_QdcPed
             fmtVersion    - sufficient versioning information so that
                             software attempting to read the file can
                             determine if it supports this version. 
@@ -50,7 +50,7 @@
 <!ATTLIST generic  
    instrument  (LAT | BFEM | BTEM | EM | EM2 | CU) #REQUIRED
    timestamp   CDATA #REQUIRED
-   calibType   NMTOKEN "QDC_ped"
+   calibType   NMTOKEN "ANC_QdcPed"
    DTDVersion  NMTOKEN "v1r0"       
    fmtVersion  NMTOKEN #REQUIRED
    creator     CDATA #IMPLIED >
