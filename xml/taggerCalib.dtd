@@ -1,5 +1,5 @@
 <!--
-   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/taggerCalib.dtd,v 1.2 2006/06/22 06:15:45 jrb Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/taggerCalib.dtd,v 1.3 2006/06/28 23:44:34 jrb Exp $
 
    /**  @file       taggerCalib.dtd
         @authors    J. Bogart
@@ -47,7 +47,7 @@
 <!ATTLIST generic  
    instrument  (LAT | BFEM | BTEM | EM | EM2 | CU) #REQUIRED
    timestamp   CDATA #REQUIRED
-   calibType (TAG_Ped | TAG_Gain)   #REQUIRED
+   calibType (ANC_TaggerPed | ANC_TaggerGain)   #REQUIRED
    DTDVersion  NMTOKEN "v1r0"       
    fmtVersion  NMTOKEN #REQUIRED
    creator     CDATA #IMPLIED >
