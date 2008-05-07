@@ -1,5 +1,5 @@
 <!--
-   $Header: $
+   $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/xml/acdCalib_v2.dtd,v 1.1 2007/10/09 18:28:01 echarles Exp $
 
    /**  @file       acdCalib.dtd
         @authors    E. Charles, J. Bogart
@@ -137,6 +137,7 @@
                  status NMTOKEN #REQUIRED -->
 
 <!ELEMENT acdHighRange EMPTY>
-<!ATTLIST acdHighRange slope NMTOKEN #REQUIRED
+<!ATTLIST acdHighRange pedestal NMTOKEN #REQUIRED
+                  slope NMTOKEN #REQUIRED
                  saturation NMTOKEN #REQUIRED
                  status NMTOKEN #REQUIRED -->
