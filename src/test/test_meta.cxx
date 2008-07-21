@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/test_meta.cxx,v 1.9 2005/02/25 23:48:22 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/test/test_meta.cxx,v 1.10 2005/03/01 20:07:51 jrb Exp $
 /** @file test_meta.cxx
     Sample program to exercise calibration metadata database services
 */
@@ -61,7 +61,7 @@ int main(int, char**) {
   /*
   ret = meta.openRecord(Metadata::INSTEm, Metadata::CTYPE_TKRHotChan,
                    Metadata::FMTXml, "1.0",
-                   "$CALIBUTILROOT/xml/test/testHot-2002-05-02.xml",
+                   "$CALIBUTILXMLPATH/test/testHot-2002-05-02.xml",
                    Metadata::CMPLOk);
   if (ret) {
     std::cerr << "openRecord failed with return value " << (int) ret 

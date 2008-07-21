@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/Metadata.cxx,v 1.33 2007/06/19 00:20:54 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/Metadata.cxx,v 1.34 2007/11/02 21:40:52 jrb Exp $
 
 /*
 #ifdef  WIN32
@@ -102,7 +102,7 @@ namespace calibUtil {
         m_readCxt = 0;
       }  else { // look for compatible schema
         std::string schema = 
-          std::string("$(RDBMODELROOT)/xml/")+ m_dbName + ".xml"; 
+          std::string("$(RDBMODELXMLPATH)/")+ m_dbName + ".xml"; 
         err = compareSchema(m_readCxt, schema);
       }
       return ok;
@@ -127,7 +127,7 @@ namespace calibUtil {
         m_readCxt = 0;
       }     else { // look for compatible schema
         std::string schema = 
-          std::string("$(RDBMODELROOT)/xml/")+ m_dbName + ".xml"; 
+          std::string("$(RDBMODELXMLPATH)/")+ m_dbName + ".xml"; 
         err = compareSchema(m_writeCxt, schema);
       }
 
