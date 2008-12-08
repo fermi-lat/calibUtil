@@ -1,5 +1,5 @@
 # -*- python -*-
-# $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/SConscript,v 1.5 2008/08/15 21:22:45 ecephas Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/SConscript,v 1.6 2008/09/05 20:30:11 glastrm Exp $
 # Authors: Joanne Bogart <jrb@slac.stanford.edu>
 # Version: calibUtil-01-13-00
 Import('baseEnv')
@@ -17,3 +17,6 @@ test_meta = progEnv.Program('test_meta',[ 'src/test/test_meta.cxx'])
 calibCoverage = progEnv.Program('calibCoverage', ['src/dbIntegrity/calibCoverage.cxx', 'src/dbIntegrity/Coverage.cxx'])
 
 progEnv.Tool('registerObjects', package = 'calibUtil', libraries = [calibUtil], testApps = [test_strips, test_meta], binaries = [calibCoverage], includes = listFiles(['calibUtil/*.h']))
+
+
+
