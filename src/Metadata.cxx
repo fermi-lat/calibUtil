@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/Metadata.cxx,v 1.34 2007/11/02 21:40:52 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/Metadata.cxx,v 1.35 2008/07/21 15:17:36 glastrm Exp $
 
 /*
 #ifdef  WIN32
@@ -511,21 +511,21 @@ Metadata::eRet Metadata::getInterval(unsigned int serialNo,
     return RETOk;
   }
 
-  int  Metadata::registerCalib(const std::string& inst, 
-                               const std::string& flavor,
-                               const std::string& calib_type, 
-                               const std::string& data_ident,
-                               const std::string& data_fmt,
-                               const facilities::Timestamp& vstart,
-                               const facilities::Timestamp& vend,
-                               const std::string& input_desc, 
-                               const std::string& notes,
-                               const std::string& proc_level,
-                               const std::string& locale,
-                               const std::string& fmt_version,
-                               const std::string& completion,
-                               const std::string& input_start,
-                               const std::string& input_end) {
+  int  Metadata::registerCalib(const std::string& /* inst */, 
+                               const std::string& /* flavor */,
+                               const std::string& /*calib_type*/, 
+                               const std::string& /*data_ident*/,
+                               const std::string& /*data_fmt*/,
+                               const facilities::Timestamp& /*vstart*/,
+                               const facilities::Timestamp& /*vend*/,
+                               const std::string& /*input_desc*/, 
+                               const std::string& /*notes*/,
+                               const std::string& /*proc_level*/,
+                               const std::string& /*locale*/,
+                               const std::string& /*fmt_version*/,
+                               const std::string& /*completion*/,
+                               const std::string& /*input_start*/,
+                               const std::string& /*input_end*/) {
 
     std::cerr << "Metadata::registerCalib: Service is not available from Gleam"
               << std::endl;
@@ -611,7 +611,7 @@ Metadata::eRet Metadata::getInterval(unsigned int serialNo,
   }
 
 
-  unsigned Metadata::adjustVend(int newSer) {
+  unsigned Metadata::adjustVend(int /* newSer */) {
     std::cerr << "Metadata::adjustVend: Service is not available from Gleam"
               << std::endl;
     return 0;

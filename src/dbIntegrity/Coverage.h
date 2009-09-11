@@ -1,4 +1,4 @@
-// $Header: $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/dbIntegrity/Coverage.h,v 1.1 2005/05/03 22:13:29 jrb Exp $
 #ifndef CALIBUTIL_COVERAGE_H
 #define CALIBUTIL_COVERAGE_H
 /**
@@ -52,7 +52,7 @@ private:
 
   facilities::Timestamp m_ts;
   std::string    m_table;
-  unsigned m_overlap;
+  int m_overlap;
   std::vector<std::string> m_selects;
   std::vector<std::string> m_orderBy;
 
