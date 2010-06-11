@@ -1,5 +1,5 @@
 # -*- python -*-
-# $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/SConscript,v 1.9 2009/08/07 22:04:43 jrb Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/SConscript,v 1.10 2009/09/11 00:55:47 jrb Exp $
 # Authors: Joanne Bogart <jrb@slac.stanford.edu>
 # Version: calibUtil-01-13-01
 Import('baseEnv')
@@ -8,7 +8,7 @@ Import('packages')
 progEnv = baseEnv.Clone()
 libEnv = baseEnv.Clone()
 
-libEnv.Tool('calibUtilLib', depsOnly = 1)
+libEnv.Tool('addLinkDeps', package='calibUtil', toBuild='shared')
 calibUtil = libEnv.SharedLibrary('calibUtil',
                                  listFiles(['src/*.cxx', 'src/*.c']))
 
