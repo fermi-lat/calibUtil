@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/dbIntegrity/Coverage.cxx,v 1.1 2005/05/03 22:13:29 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/dbIntegrity/Coverage.cxx,v 1.2 2005/06/19 20:42:37 jrb Exp $
 /**
    @file Coverage.cxx
 
@@ -8,6 +8,7 @@
 */
 #include <iostream>
 #include <cstdio>
+#include <cstdlib>
 #include "Coverage.h"
 #include "facilities/Util.h"
 #include "calibUtil/Metadata.h"
