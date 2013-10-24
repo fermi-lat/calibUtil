@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/Metadata.cxx,v 1.37 2010/06/11 00:05:02 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/Metadata.cxx,v 1.38 2011/08/16 21:07:36 jrb Exp $
 
 #include "calibUtil/Metadata.h"
 #include "facilities/Util.h"
@@ -272,7 +272,7 @@ namespace calibUtil {
     Assertion::Operator flavorOp(OPTYPEequal, "flavor", flavor, 
                                  FIELDTYPEold, FIELDTYPElit);
                                  //  false, true);
-    Assertion::Operator vstartOp(OPTYPEgreaterThan, timestamp.getString(), 
+    Assertion::Operator vstartOp(OPTYPEgreaterOrEqual, timestamp.getString(), 
                                  "vstart",
                                  FIELDTYPElit, FIELDTYPEold);
     //                      true, false);
