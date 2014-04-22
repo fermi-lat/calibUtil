@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/calibUtil/src/test/add_meta.cxx,v 1.5 2005/05/16 20:10:36 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/test/add_meta.cxx,v 1.6 2005/07/08 17:11:13 jrb Exp $
 /** @file test_meta.cxx
     Sample program to add record(s) to the MySQL database. For now user
     only gets to specify
@@ -13,6 +13,7 @@
 #include <string>
 #include <iostream>
 #include "calibUtil/Metadata.h"
+#include "facilities/commonUtiliites.h"
 
 void gotIt(unsigned int ser, const std::string& dataFmt,
            const std::string& fmtVersion, const std::string& dataIdent);
@@ -23,6 +24,7 @@ int main(int, char**) {
 
   Metadata  meta("*", "*", "calib_test");
 
+  faciliites::commonUtilities::setupEnvironment();
   int ser = 
     meta.registerCalib("kazoo","mango", "Test_Gen", "notAFile.xml",
                        "XML", facilities::Timestamp("1990-1-5"),

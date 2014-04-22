@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/test/test_strips.cxx,v 1.7 2003/12/02 23:37:39 jrb Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/calibUtil/src/test/test_strips.cxx,v 1.8 2008/07/21 15:17:36 glastrm Exp $
 /**  @file test_strips.cxx
    Sample program to exercise low-level calibration strip services. 
    Optional argument is path to file using badStrips.dtd.  If omitted,
@@ -6,6 +6,7 @@
 */
 #include "calibUtil/StripSrv.h"
 #include "facilities/Util.h"
+#include "facilities/commonUtilities.h"
 
 #include <string>
 #include <iostream>
@@ -26,6 +27,7 @@ class MyObject : public calibUtil::ClientObject {
 int main(int argc, char* argv[]) {
   using calibUtil::StripSrv;
 
+  facilities::commonUtilities::setupEnvironment();
   std::string name = "$(CALIBUTILXMLPATH)/xml/test/testHot.xml";
   
   if (argc > 1) {
